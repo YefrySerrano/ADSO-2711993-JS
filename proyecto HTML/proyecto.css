@@ -1,0 +1,55 @@
+.formulario{
+    border: solid 2px #ffc107;
+}
+
+.bottonrojo:hover{
+    color: #ffc107;
+}
+.logo{
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    border-radius: 50%;
+    width: 5%;
+    margin-left: 1em;
+    margin-right: 2em;
+}
+.encabezado{
+    box-shadow: rgba(0,0,0,0.16)0px 3px 6px,rgba(0,0,0,0.23) 0px 3px 6px;
+    border-radius: 2%;
+    margin: 1%;
+}
+
+.encabezado h2{
+    text-align: center;
+}
+header{
+    margin-top: 1%;
+}
+.loop{
+    padding: 3%;
+}
+ul li i{
+    margin-left:40px ;
+}
+form i{
+    margin-right: 2px;
+}
+.principal{
+    box-shadow: rgba(38,57,77)0px 20px 30px -10px;
+    border-radius: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5px;
+    
+}
+.principal div{
+    box-shadow: rgba(50, 50, 93, 0.25)0px 13px 27px -5px,rgba(0,0,0,0.3)0px 8px 16px -8px;
+    /* border-radius: 3%; */
+    margin: 10px;
+    height: 250px;
+    width: 20%;
+
+}
+.imgBody{
+    width: 100%;
+}
