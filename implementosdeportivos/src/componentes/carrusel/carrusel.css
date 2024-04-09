@@ -1,0 +1,23 @@
+.container-fluid {
+    height: 50%;
+    width: 100%;
+    }
+   
+    .carousel-inner img {
+    height: auto;
+    max-height:500px;
+
+    }
+
+
+.contenedorP{
+    padding: 5% 25% 0% 25%;
+    
+}
+
+.contenedorP .center{
+    text-align: center;
+}
+.center button{
+    margin: 1%;
+}
