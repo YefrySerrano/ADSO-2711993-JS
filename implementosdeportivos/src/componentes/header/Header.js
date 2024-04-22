@@ -1,6 +1,6 @@
 import React from "react";
 import './header.css';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 
@@ -31,7 +31,7 @@ function Header() {
                             <li className="nav-item">
                                 <a className="nav-link text-white " aria-disabled="true" href="#">Otros</a>
                             </li>
-                            <Link to='/Registro'>
+                            <Link to='/registro'>
                                 <li className="nav-item">
                                     <a className="nav-link text-white " aria-disabled="true" href="#">Registrarse</a>
                                 </li>

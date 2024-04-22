@@ -2,7 +2,7 @@ import tennisNike from './tennisNike.png'
 import tennisAdi from './tennisAdi.png'
 import tennisReeb from './tennisReeb.png'
 
-export default[
+const data = [
     {
         id : 1,
         title: "Nike Air Max 1 86 Premium",
@@ -30,3 +30,4 @@ export default[
     
     },
 ]
+export default data
