@@ -31,7 +31,7 @@ function Header() {
                             <li className="nav-item">
                                 <a className="nav-link text-white " aria-disabled="true" href="#">Otros</a>
                             </li>
-                            <Link to='/registro'>
+                            <Link to='/Registro'>
                                 <li className="nav-item">
                                     <a className="nav-link text-white " aria-disabled="true" href="#">Registrarse</a>
                                 </li>
