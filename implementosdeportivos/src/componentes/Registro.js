@@ -3,9 +3,7 @@ import Swal from 'sweetalert2';
 import { useState } from 'react';
 import { useRef } from 'react';
 
-// function Registro() {
 
-//Validaciones del formulario 
 export default function Registro() {
   //const [deptos Index, setDeptos Index] = useState(1);
 
@@ -84,8 +82,8 @@ export default function Registro() {
 
     e.preventDefault();
 
-    let validPassword = /^(?=. *? [A-Z] ) (?=.*?[a-z]) (?=. *?[0-9]) (?=.*? [#? ! @$%^&* - ]).{8,}$/; //Expersión regular para: Mínimo 8 caracteres de longitud. Almenos una letra mayúscula. Almenos una letra minúscula. Almenos un número. Almenos un caracter especial. https://uibakery.io/regex-library/password 
-    let validEmail = /^\w+([.-_+]?\w+) *@\w+( [ . -]?\w+)*(\ . \w{2,10})+$/; //Expresión regular para validar email, es decir, que el email ingresado tenga el formato correcto de una dirección de correo electrónico
+    let validPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/; //Expersión regular para: Mínimo 8 caracteres de longitud. Almenos una letra mayúscula. Almenos una letra minúscula. Almenos un número. Almenos un caracter especial. https://uibakery.io/regex-library/password 
+    let validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/; //Expresión regular para validar email, es decir, que el email ingresado tenga el formato correcto de una dirección de correo electrónico
 
     if (
       values.identificacion.length < 5 ||
@@ -163,6 +161,7 @@ export default function Registro() {
           icon: "error",
         })
       });
+    }
     ///hmtl
     return (
 
@@ -172,26 +171,26 @@ export default function Registro() {
         </h1 >
         <form onSubmit={handleSubmit} ref={form} >
           <div class="form-group">
-            <label for="exampleInputEmail1">Numero de Identificacion</label>
-            <input name='identificacion' type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="identificacion" onChange={handleChange} onClick={idError} />
+            <label for="numeroID">Numero de Identificacion</label>
+            <input name='identificacion' type="number" class="form-control" id="numeroID" aria-describedby="emailHelp" placeholder="identificacion" onChange={handleChange} onClick={idError} />
             {identificacionError && <small className="text-danger"> Numero de Identificacion </small>}
 
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Nombre</label>
-            <input name='nombre' type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre" onChange={handleChange} onClick={nombreError} />
+            <input name='nombre' type="text" class="form-control" id="Nombres" placeholder="Nombre" onChange={handleChange} onClick={nombreError} />
             {nomError && <small className="text-danger"> Nombre </small>}
           </div>
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Apellido</label>
-            <input name='apellido' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apellido" onChange={handleChange} onClick={apelliError} />
+            <label for="Apellidos">Apellido</label>
+            <input name='apellido' type="text" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Apellido" onChange={handleChange} onClick={apelliError} />
             {apellidoError && <small className="text-danger"> Apellido </small>}
 
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Correo</label>
-            <input name='email' type="email" class="form-control" id="exampleInputPassword1" placeholder="Correo" onChange={handleChange} onClick={errorEmail} />
+            <input name='email' type="email" class="form-control" id="Correo" placeholder="Correo" onChange={handleChange} onClick={errorEmail} />
             {emailError && <small className="text-danger"> Correo </small>}
             {emailErrorVacio && <small className="text-danger"> ErrorVacio </small>}
 
@@ -200,19 +199,19 @@ export default function Registro() {
 
           <div class="form-group">
             <label for="exampleInputEmail1">Direccion</label>
-            <input name='direccion' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion" onChange={handleChange} onClick={direccionError} />
+            <input name='direccion' type="text" class="form-control" id="adress" aria-describedby="emailHelp" placeholder="Direccion" onChange={handleChange} onClick={direccionError} />
             {dirError && <small className="text-danger"> Correo </small>}
 
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Telefono</label>
-            <input name='telefono' type="number" class="form-control" id="exampleInputPassword1" placeholder="Telefono" onChange={handleChange} onClick={telefonoError} />
+            <input name='telefono' type="number" class="form-control" id="NumberPhone" placeholder="Telefono" onChange={handleChange} onClick={telefonoError} />
             {telError && <small className="text-danger"> Correo </small>}
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail1">Fecha de Nacimiento</label>
-            <input name='fechaNacimiento' type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="DD/MM/AA" onChange={handleChange} onClick={fechaNacimientoError} />
+            <input name='fechaNacimiento' type="date" class="form-control" id="birthday" aria-describedby="emailHelp" placeholder="DD/MM/AA" onChange={handleChange} onClick={fechaNacimientoError} />
             {fechaNacimientoErrorFuncion && <small className="text-danger"> Correo </small>}
 
           </div>
@@ -226,7 +225,7 @@ export default function Registro() {
 
           <div class="form-group">
             <label for="exampleInputEmail1">Pass Repeat</label>
-            <input name='passRepeat' type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pass Repeat" onChange={handleChange} onClick={passwordErrorRepeat} />
+            <input name='passRepeat' type="password" class="form-control" id="exampleInputPassword2" aria-describedby="emailHelp" placeholder="Pass Repeat" onChange={handleChange} onClick={passwordErrorRepeat} />
             {passRepeat && <small className="text-danger"> Correo </small>}
           </div>
 
@@ -236,9 +235,8 @@ export default function Registro() {
         </form>
       </div>
     )
-
   }
 
-};
+
 
 
