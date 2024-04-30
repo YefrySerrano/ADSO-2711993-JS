@@ -3,7 +3,7 @@ const path = require('path');
 
 const userFilePath = path.join(
     __dirname,
-    "../../src/componetnes/usuariosRegitrados.json"
+    "../../src/componentes/usuariosRegistrados.json"
 );
 
 const controller = {
@@ -12,7 +12,7 @@ const controller = {
             const usersData = await fs.readFile(userFilePath, "utf8");
             const users = JSON.parse(usersData);
 
-            const utlimo = users.length;
+            const ultimo = users.length;
             const usuarioNuevo = {
                 id: ultimo + 1,
                 indentificacion: req.body.indentificacion,
@@ -27,10 +27,13 @@ const controller = {
                 rol: "Usuario",
                 fecha_creacion: new Date(),
             };
+            console.log(req.body.email)
+            console.log(req.body.identificacion)
             for (x of users) {
+
                 if (
-                    X.email === req.body.email ||
-                    X.indentificacion === req.body.indentificacion
+                    x.email === req.body.email ||
+                    x.indentificacion === req.body.identificacion
                 ) {
                     res.status(400).send("Email ya existe");
                     return;
@@ -54,6 +57,7 @@ const controller = {
             const users = JSON.parse(usersData);
 
             for (x of users) {
+
                 if (
                     x.email === req.body.email &&
                     x.password === req.body.password &&

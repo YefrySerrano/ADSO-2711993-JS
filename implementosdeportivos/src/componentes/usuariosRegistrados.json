@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "nombres": "ssr",
+        "email": "yef@gmail.com",
+        "direccion": "ghgfhddfdfdfdddfdfd",
+        "telefono": "3443344334",
+        "fechaNacimiento": "2024-04-11",
+        "password": "Julio1234#$",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creacion": "2024-04-29T22:06:06.851Z"
+    }
+]

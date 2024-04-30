@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 const user = require("./controller/userController");
-app.use("/resgistro-usuario", user.register);
+app.use("/registro-usuario", user.register);
 app.use("/login", user.login);
 
 const PORT = 3001;
