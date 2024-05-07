@@ -15,9 +15,9 @@ const controller = {
             const ultimo = users.length;
             const usuarioNuevo = {
                 id: ultimo + 1,
-                indentificacion: req.body.indentificacion,
+                identificacion: req.body.identificacion,
                 nombres: req.body.nombres,
-                apellidos: req.body.apeliidos,
+                apellidos: req.body.apellidos,
                 email: req.body.email,
                 direccion: req.body.direccion,
                 telefono: req.body.telefono,
@@ -33,7 +33,7 @@ const controller = {
 
                 if (
                     x.email === req.body.email ||
-                    x.indentificacion === req.body.identificacion
+                    x.identificacion === req.body.identificacion
                 ) {
                     res.status(400).send("Email ya existe");
                     return;
@@ -51,25 +51,27 @@ const controller = {
         }
     },
 
-    login: async function (req, res) {
+    login: async function (req, res){
         try {
-            const usersData = await fs.readFile(userFilePath, "utf8");
+            const usersData = await fs.readFile(userFilePath, "utf-8");
             const users = JSON.parse(usersData);
 
             for (x of users) {
-
                 if (
                     x.email === req.body.email &&
                     x.password === req.body.password &&
                     x.rol === req.body.rol
-                ) {
-                    res.status(200).send("ok");
-                    return;
+                ){
+                    return res.json({
+                        nombres: x.nombres,
+                        apellidos: x.apellidos,
+                        email: x.email,
+                    });
                 }
             }
-            res.status(400).send("Error");
+           res.json({title:"error"});
         } catch (error) {
-            console.errror("Error al procesar el resgitro:", error);
+            console.error("Error al procesar el registro", error);
             res.status(500).send("Error interno del servidor");
         }
     },

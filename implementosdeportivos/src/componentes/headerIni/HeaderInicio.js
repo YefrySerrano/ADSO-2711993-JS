@@ -1,10 +1,34 @@
 import React from "react";
-import './header.css';
+import './headerInicio.css';
 import {Link} from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 
 function Header() {
+
+    const handleClickCerrarSesion = (e) => {
+        e.preventDefault(); // Evitar que el enlace redirija inmediatamente
+    
+        // Mostrar el SweetAlert al hacer click en el enlace
+        Swal.fire({
+          title: '¿Estás seguro?',
+          text: 'Estás a punto de cerrar sesión. ¿Deseas continuar?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, cerrar sesión',
+          cancelButtonText: 'Cancelar',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Redirigir a la página de Login si se confirma la acción
+            window.location.href = '/login'; // Cambia esto por tu lógica de redirección
+          }
+        });
+      };
+
+
     return (
         <div className="contenedor border">
             <nav className="navbar navbar-expand-lg bg-primary border ">
@@ -31,16 +55,10 @@ function Header() {
                             <li className="nav-item">
                                 <a className="nav-link text-white " aria-disabled="true" href="#">Otros</a>
                             </li>
-                            <Link to='/registro'>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white " aria-disabled="true" href="#">Registrarse</a>
-                                </li>
-                            </Link> 
-                            <Link to='/login'>
-                                <li className="nav-item">
-                                    <a className="nav-link text-white " aria-disabled="true" href="#" >Iniciar sesion </a>
-                                </li>
-                            </Link>
+                                    <a className="nav-link text-white " aria-disabled="true" href="#" onClick={handleClickCerrarSesion}>Cerrar Sesion</a>
+                                </li>                            
+                            
                         </ul>
                         <form className="d-flex" role="search">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

@@ -10,5 +10,33 @@
         "estado": "activo",
         "rol": "Usuario",
         "fecha_creacion": "2024-04-29T22:06:06.851Z"
+    },
+    {
+        "id": 2,
+        "identificacion": "1088026683",
+        "nombres": "yefry",
+        "apellidos": "marin",
+        "email": "sjhdh@gmail.com",
+        "direccion": "manzana 10 casa 30 ",
+        "telefono": "3136469812",
+        "fechaNacimiento": "1996-06-09",
+        "password": "Yefry960*.",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creacion": "2024-05-06T20:46:40.160Z"
+    },
+    {
+        "id": 3,
+        "identificacion": "1232597687",
+        "nombres": "Angelo",
+        "apellidos": "Moron",
+        "email": "angelo@gmail.com",
+        "direccion": "manzana 10 casa 30 ",
+        "telefono": "3113784303",
+        "fechaNacimiento": "2024-05-09",
+        "password": "Celeste9321",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creacion": "2024-05-07T19:06:31.325Z"
     }
 ]
