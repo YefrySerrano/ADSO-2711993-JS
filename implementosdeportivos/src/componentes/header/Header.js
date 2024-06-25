@@ -2,6 +2,8 @@ import React from "react";
 import './header.css';
 import {Link} from 'react-router-dom';
 
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 
 
 function Header() {
@@ -46,6 +48,13 @@ function Header() {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-info" type="submit">Search</button>
                         </form>
+                        <ul className="navbar-nav mb-2 mb-lg-0 lista">
+                            <Link to='/carrito-contents'>
+                                <li className="nav-item itemLista">
+                                    <a className="nav-link" href="#"><ShoppingCartIcon className='negro'/></a>
+                                </li>
+                            </Link>
+                        </ul>
                     </div>
                 </div>
             </nav>

@@ -1,0 +1,33 @@
+.bigcont{
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    background-color: white;
+    margin: 2% 1% 2% 1%;
+    border-radius: 1%;
+    padding: 2%;
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btncont{
+    text-align: center;
+}
+
+.error{
+    color: red;
+    width: 100%;
+    font-size: 12px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.btnGoogle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

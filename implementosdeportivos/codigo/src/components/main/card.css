@@ -1,0 +1,48 @@
+.divCards{
+    box-shadow: rgba(30, 202, 211, 0.4) -5px 5px, rgba(30, 202, 211, 0.3) -10px 10px, rgba(30, 202, 211, 0.2) -15px 15px, rgba(30, 202, 211, 0.1) -20px 20px, rgba(30, 202, 211, 0.05) -25px 25px;
+    display: flex;
+    margin: 2%;
+    padding: 2%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.card2{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 1%;
+    border-radius: 5%;
+    margin: 10px;
+    height: fit-content;
+    width: 17%;
+}
+
+.card2:hover{
+    transform: scale(1.05);
+    border: lightblue solid 7px;
+    width: 20%;
+    transition-duration: .2s;
+}
+
+.covers{
+    border-radius: 9px;
+    width: 200px;
+    height: 300px;
+    margin: auto;   
+}
+
+.card2 p{
+    text-align: justify;
+}
+
+p{
+    /*border: red 2px solid;*/
+    width: auto;
+    height: auto;
+}
+
+/*.card2:hover p{
+    width: auto;
+    margin-left: 16px;
+}*/

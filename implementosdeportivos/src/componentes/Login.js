@@ -1,3 +1,4 @@
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import React, { useEffect, useState } from 'react';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import PasswordIcon from '@mui/icons-material/Password';
@@ -6,6 +7,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';
+import GoogleOAuth from './googleOAuth/GoogleOAuth.js';
 // import FireBaseAuth from './FireBase/FireBaseAuth';
 // import GoogleOAuth from './google-oauth/GoogleOAuth';
 
@@ -100,33 +102,7 @@ const Login = () => {
                 }
             }
         })
-            // .then(response => {
-            //     if (response.status === 200 && values.rol === "Usuario") {
-            //         cookies.set('email', values.email, {
-            //             secure: true,
-            //             sameSite: 'None',
-            //             path: '/'
-            //         })
-            //         window.location.hash = '/sesion' //vista para los ususarios logueados con el rol de "ususario"
-            //     }
-            //     else if (Response.status === 200 && values.rol === "Administrador") {
-            //         cookies.set('email', values.email, {
-            //             secure: true,
-            //             sameSite: 'None',
-            //             path: '/'
-            //         })
-            //         window.location.hash = '/usuarios-regitrados' //vista con los usuarios registrados
-
-            //     }
-            //     else {
-            //         console.log("sdfd", response.status)
-            //         Swal.fire({
-            //             title: "lascredenciales ingresadas no son correctas",
-            //             icon: "error"
-            //         })
-            //         window.location.hash = '/login'
-            //     }
-
+           
             .catch(() => Swal.fire({
                 title: "No se puede iniciar sesiion por un problema en el servidor",
                 icon: "error"
@@ -142,14 +118,7 @@ const Login = () => {
         }
     })
 
-    /*
-    useEffect(()=>{
-        const queryString = window.location.searach
-        const urlParams = new URLSearchParams(queryString)
-        const codeParam = urlParams.get("code")
-        console.log("Esto es codeParam", codeParam)
-    })
-    */
+    
     return (
         <div>
             
@@ -171,7 +140,7 @@ const Login = () => {
                                                     <option>Usuario</option>
                                                 </select>
                                                 <div className='input-group-append'>
-                                                   <span className='input-group-text' id='basic-addon2'></span>
+                                                   <span className='input-group-text' id='basic-addon2'><GroupIcon/></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -201,34 +170,14 @@ const Login = () => {
                                             </div>
                                             <span className='text-start'>{errorPassword ? <p>Debe ingresar una contraseña</p>:""}</span>
                                         </div>
-                                        {/* <!--- Checkbox -->*/}
-                                        { /*<div className='form-check d-flex justif-content-start mb-4'>
-                                            <input className='form-check-input' type="checkbox" value="" id="form1Example3"></input>
-                                            <label className='form-check-label' for='form1Example3'> Remember password</label>                                        
-                                        </div>*/ }
-
+                                     
+            
                                         <div className='d-grid gap-2 col-15 mx-auto'>
                                             <button className='btn btn-primary btn-lg btn-block' type="submit">Login</button>
                                         </div>
 
                                         <hr className='my-20'/>{/* cre una linea horizontal*/}
-
-                                        {/*<div className='d-grid gap-2 col-15 mx-auto'>
-                                            <button className='btn btn-lg btn-block btn-primary bg-danger' type='submit'><GoogleIcon/>Sign in with Google</button>
-                                            <button className='btn btn-lg btn-block btn-primary  m-b2 bg-primary' type='submit'><FacebookIcon/>Sign in with Facebook</button>
-                                        </div>*/}
-
-                                        {/* <div className='row'>
-                                            <div className='col-6'>
-                                                <GoogleOAuth/>
-                                            </div>
-                                            <div className='col-6'>
-                                                <FireBaseAuth/>
-                                            </div>
-                                        </div> */}
-                                        {/* <GitHubOAuth*/}
-
-
+                                        <GoogleOAuth/>
                                     </div>
                                 </div>
                             </div>
