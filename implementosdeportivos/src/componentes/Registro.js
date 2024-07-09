@@ -184,7 +184,7 @@ export default function Registro() {
           {nomError ? <small className="text-danger"> Nombre </small> : ""}
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> 
           <label for="Apellidos">Apellido</label>
           <input name='apellidos' type="text" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Apellido" onChange={handleChange} onClick={apelliError} />
           {apellidoError ? <small className="text-danger"> Apellido </small> : ""}

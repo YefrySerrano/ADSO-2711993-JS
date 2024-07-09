@@ -1,4 +1,5 @@
 const fs = require('fs').promises;
+const { connect } = require('http2');
 const path = require('path');
 
 const userFilePath = path.join(
@@ -75,6 +76,19 @@ const controller = {
             res.status(500).send("Error interno del servidor");
         }
     },
+
+    regiterDB: function (req,res){
+        console.log(req.body)
+        const {identificacion,Nombres,Apellidos,email,direccion,telefono,fechaNacimiento,password} = JSON.parse(JSON.stringify(req.body))
+        try{
+            const sql = "INSERT INTO sql10713101.usuario (indentificacion,nombre,apellido,email,dirrecion,telefono,fechanacimiento,password) VALUES (?,?,?,?,?,?,?,?)"
+            connection.execute(sql,[identificacion,Nombres,Apellidos,email,direccion,telefono,fechaNacimiento,password])
+            res.status(200).send("Registro exitoso")
+        }catch{
+            console.error("Error al insertar en la base de datos",error);
+            res.status(500).send("Error interno del servidor")
+        }
+    }
 };
 
 module.exports = controller;
