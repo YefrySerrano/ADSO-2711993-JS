@@ -8,6 +8,7 @@ import Footer from './footer/Footer';
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';
 import GoogleOAuth from './googleOAuth/GoogleOAuth.js';
+import FireBaseAuth from './FireBase/FireBaseAuth.js';
 // import FireBaseAuth from './FireBase/FireBaseAuth';
 // import GoogleOAuth from './google-oauth/GoogleOAuth';
 
@@ -178,6 +179,7 @@ const Login = () => {
 
                                         <hr className='my-20'/>{/* cre una linea horizontal*/}
                                         <GoogleOAuth/>
+                                        <FireBaseAuth/>
                                     </div>
                                 </div>
                             </div>
