@@ -3,6 +3,9 @@ import fs from 'fs'; // para manipulacion de archivos FileSystem
 import bodyParser from 'body-parser';
 
 const app = express();
+
+app.use(bodyParser.json());
+
 app.get("/",(req, res) => {
     res.send("Bienvenido a mi api Rest en NODEJS");
 })
@@ -46,12 +49,43 @@ app.get("/tenis/:id", (req, res) => {
 app.post("/crear", (req, res) => {
     const data = readData();
     const body = req.body;
+    console.log(body);
+
     const newTennis = {
-        id: data.tenis.length +1,
-        ... body,
+        id: data.tenis.length + 1,
+        ...body,
     }
     data.tenis.push(newTennis);
+    writeData(data);
     res.json(newTennis);
+})
+
+//PUT
+
+app.put("/actualizar/:id", (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const id = parseInt(req.params.id)
+    const tenniIndex = data.tenis.findIndex((tenni) => tenni.id === id)
+    data.tenis[tenniIndex] = {
+        ...data.tenis[tenniIndex],
+        ...body
+    }
+    writeData(data);
+    res.json({mensaje:"Se ha actulizado correctamente "});
+
+})
+
+//DELETE
+
+app.delete("/borrar/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id)
+    const tennisIndex = data.tenis.findIndex((tennis) => tennis.id === id)
+    data.tenis.splice(tennisIndex, 1);
+    writeData(data);
+    res.json({mensaje:"Se ha borrado correctamente "});
+
 })
 
 app.listen(3000,() =>{

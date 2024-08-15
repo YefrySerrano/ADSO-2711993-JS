@@ -1,23 +1,28 @@
 {
-   "tenis":[
+    "tenis": [
         {
-            "id":1,
-            "marca": "adidas",
-            "modelo": "Yeezy 350 V2",
-            "preco": 169000
-        },
-        {
-            "id":2,
+            "id": 2,
             "marca": "Nike",
             "modelo": "Air for one",
-            "preco": 180000
+            "precio": 180000
         },
         {
-            "id":3,
+            "id": 3,
             "marca": "Reebook",
             "modelo": "Classic",
-            "preco": 220000
+            "precio": 220000
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6,
+            "marca": "Nike",
+            "modelo": "Air Max 97",
+            "precio": 220000
         }
-    ]    
-
+    ]
 }
