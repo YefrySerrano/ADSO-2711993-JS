@@ -22,6 +22,7 @@ function App(){
                 <Route exact path="/carrito-vacio" element={<CarritoVacio/>}/>
                 <Route exact path="/carrito-elements" element={<CarritoElements/>}/>
                 <Route exact path="/carrito-contents" element={<CarritoContents/>}/>
+                
                 <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </HashRouter>

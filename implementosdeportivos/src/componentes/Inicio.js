@@ -3,7 +3,8 @@ import React from 'react';
 import Header from './header/Header';
 import CardList from './body/CardList';
 import Carrusel from './carrusel/Carrusel';
-import CarritoVacio from './carrito/CarritoVacio';
+
+import BarraRedesSociales from './barraRedes/BarraRedes';
 
 function Inicio() {
   return (
@@ -11,6 +12,9 @@ function Inicio() {
       <Header/>
       <Carrusel/>
       <CardList/>
+      <BarraRedesSociales/>
+      
+      
       
     </div>
   );
